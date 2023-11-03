@@ -1,3 +1,11 @@
+
+/* Variables */
+
+:root {
+  --primary-text-col: white;
+  --header-background-col: #808080;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -22,14 +30,58 @@ p {
   margin: 0;
 }
 
+
+/* Header section */
+
 header {
-  border: 1px solid black;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--header-background-col);
+  height: 8vh;
 }
 
 header h1 {
-  padding: 10px 10px 10px 40px;
-  background-color: grey;
+  padding: 10px 10px 10px 60px;
+  background-color: #CCCCCC;
+  border-right: 2px solid white;
 
 }
+
+nav {
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-right: 10px;
+  
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+nav li {
+  list-style-type: none;
+  text-decoration: none;
+  color: var(--primary-text-col);
+  margin: 0 5px;
+}
+
+nav li a {
+  font-size: 1.2rem;
+  border-bottom: 3px solid var(--primary-text-col);
+  color: var(--primary-text-col);
+  text-decoration: none;
+}
+
+
+nav li a:hover {
+  border-bottom: 3px solid lightgrey;
+  color: lightgrey;
+  cursor: pointer;
+}
+
+/* Main section */
