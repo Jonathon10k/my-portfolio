@@ -2,8 +2,11 @@
 /* Variables */
 
 :root {
-  --primary-text-col: white;
-  --header-background-col: #808080;
+  --primary-text-col: #92CACD;
+  --secondary-text-col: rgba(63, 77, 108);
+  
+  --header-background-col: rgb(44, 46, 53);
+  --body-background-col: rgb(237, 235, 246);
 }
 
 * {
@@ -15,6 +18,7 @@ body {
   padding: 0;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   line-height: 1.5;
+  background-color: var(--body-background-col);
 }
 
 h1,
@@ -30,7 +34,6 @@ p {
   margin: 0;
 }
 
-
 /* Header section */
 
 header {
@@ -38,23 +41,24 @@ header {
   flex-direction: row;
   justify-content: space-between;
   background-color: var(--header-background-col);
-  height: 8vh;
+  padding: 5px 0;
 }
 
-header h1 {
-  padding: 10px 10px 10px 60px;
-  background-color: #CCCCCC;
-  border-right: 2px solid white;
-
+.logo {
+  padding: 0 12px 0 180px;
+  background-color: var(--primary-text-col);
+  color: var(--header-background-col);
+  margin: 5px 0;
+  font-size: 3rem;
 }
 
 nav {
-  width: 400px;
+  width: 450px;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-right: 10px;
-  
+  margin: 5px 10px 0 0;
+  padding-right: 40px;
 }
 
 nav ul {
@@ -71,7 +75,7 @@ nav li {
 }
 
 nav li a {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   border-bottom: 3px solid var(--primary-text-col);
   color: var(--primary-text-col);
   text-decoration: none;
@@ -84,4 +88,46 @@ nav li a:hover {
   cursor: pointer;
 }
 
+/* Hero banner */
+
+.hero-banner {
+  width: 100%;
+  padding: 40px 0;
+  position: relative;
+  background-image: url("../images/02-hero-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Using ::before pseudo selector to add a tinted layer over hero-banner image */
+.hero-banner::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(18, 91, 144, 0.6);
+
+}
+
+.hero-banner h2 {
+  color: var(--header-background-col);
+  font-size: 1.5rem;
+  height: 50px;
+  padding: 7px;
+  margin-right: 90px;
+  background-color: var(--primary-text-col);
+  position: relative;
+  z-index: 1;
+}
+
 /* Main section */
+
+section h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--secondary-text-col);
+}
