@@ -1,10 +1,9 @@
-
 /* Variables */
 
 :root {
   --primary-text-col: #92CACD;
   --secondary-text-col: rgba(63, 77, 108);
-  
+
   --header-background-col: rgb(44, 46, 53);
   --body-background-col: rgb(237, 235, 246);
 }
@@ -32,6 +31,7 @@ h6 {
 
 p {
   margin: 0;
+  color: var(--secondary-text-col);
 }
 
 /* Header section */
@@ -45,11 +45,11 @@ header {
 }
 
 .logo {
-  padding: 0 12px 0 180px;
+  padding: 0 13px 0 180px;
   background-color: var(--primary-text-col);
   color: var(--header-background-col);
   margin: 5px 0;
-  font-size: 3rem;
+  font-size: 3.1rem;
 }
 
 nav {
@@ -75,12 +75,21 @@ nav li {
 }
 
 nav li a {
-  font-size: 1.3rem;
-  border-bottom: 3px solid var(--primary-text-col);
+  font-size: 1.2rem;
+
   color: var(--primary-text-col);
   text-decoration: none;
+  position: relative;
 }
 
+nav li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 107%;
+  border-bottom: 4px solid var(--primary-text-col);
+}
 
 nav li a:hover {
   border-bottom: 3px solid lightgrey;
@@ -115,7 +124,8 @@ nav li a:hover {
 
 .hero-banner h2 {
   color: var(--header-background-col);
-  font-size: 1.5rem;
+  font-size: 1.7rem;
+  font-weight: bolder;
   height: 50px;
   padding: 7px;
   margin-right: 90px;
@@ -126,8 +136,147 @@ nav li a:hover {
 
 /* Main section */
 
-section h2 {
-  font-size: 3rem;
+.page-section-title {
+  font-size: 4.2rem;
   font-weight: 900;
+  margin-top: 15px;
+  line-height: 1.1;
   color: var(--secondary-text-col);
+}
+
+.page-wrapper {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+
+#about,
+#work {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.contact {
+  display: flex;
+  flex-direction: rows;
+  justify-content: space-around;
+  text-align: left;
+}
+
+.contact-ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+
+.contact-ul li,
+.contact-ul li a {
+  list-style-type: none;
+  text-decoration: none;
+
+}
+
+.contact-ul li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 90px;
+  width: 100%;
+  border-bottom: 4px solid var(--secondary-text-col);
+}
+
+.contact-ul li a {
+  color: var(--secondary-text-col);
+  font-size: 1.1rem;
+  font-weight: 400;
+  cursor: pointer;
+
+}
+
+.page-section {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.page-section-p {
+  font-size: 0.8rem;
+  text-align: left;
+  padding: 20px 0;
+  margin: 0 40px;
+}
+
+.page-section-title {
+  border-right: 3px solid var(--secondary-text-col);
+  padding-right: 10px;
+  text-align: right;
+}
+
+.page {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+}
+
+.portfolio {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: 1f 1fr;
+  grid-gap: 10px;
+  grid-template-areas:
+    "showcase showcase"
+    "card2 card3"
+    "card4 card5";
+}
+
+.portfolio-card {
+  border: 5px solid var(--primary-text-col);
+  height: 120px;
+
+}
+
+#card-showcase {
+  background-image: url("../images/02-portfolio-1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  grid-area: showcase;
+}
+
+#card2 {
+  background-image: url("../images/02-portfolio-2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  grid-area: card2;
+}
+
+
+#card3 {
+  background-image: url("../images/02-portfolio-3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  grid-area: card3;
+}
+
+
+#card4 {
+  background-image: url("../images/02-portfolio-4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  grid-area: card4;
+}
+
+
+#card5 {
+  background-image: url("../images/02-run-buddy.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  grid-area: card5;
 }
