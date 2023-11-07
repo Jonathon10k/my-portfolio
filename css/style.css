@@ -71,24 +71,26 @@ nav li {
   list-style-type: none;
   text-decoration: none;
   color: var(--primary-text-col);
-  margin: 0 5px;
+  padding: 2px 1px;
+  margin: 0 6px;
 }
 
 nav li a {
   font-size: 1.2rem;
-
   color: var(--primary-text-col);
   text-decoration: none;
   position: relative;
 }
 
+/* Li extended underline */
 nav li a::after {
   content: "";
   position: absolute;
-  left: 0;
+  left: 50%;
   bottom: -5px;
-  width: 107%;
-  border-bottom: 4px solid var(--primary-text-col);
+  transform: translateX(-50%);
+  width: 110%;
+  border-bottom: 3px solid var(--primary-text-col);
 }
 
 nav li a:hover {
@@ -110,7 +112,8 @@ nav li a:hover {
   justify-content: flex-end;
 }
 
-/* Using ::before pseudo selector to add a tinted layer over hero-banner image */
+/* Using ::after pseudo element selector to add a tinted layer over hero-banner image */
+/* TODO gradient */
 .hero-banner::after {
   content: "";
   height: 100%;
@@ -131,7 +134,7 @@ nav li a:hover {
   margin-right: 90px;
   background-color: var(--primary-text-col);
   position: relative;
-  z-index: 1;
+  z-index: 100;
 }
 
 /* Main section */
@@ -139,19 +142,23 @@ nav li a:hover {
 .page-section-title {
   font-size: 4.2rem;
   font-weight: 900;
-  margin-top: 15px;
   line-height: 1.1;
+  text-align: right;
   color: var(--secondary-text-col);
+  min-width: 255px;
+  flex: 0 0 0px;
+  border-right: 4px solid var(--secondary-text-col);
+  padding-right: 15px;
+  margin-bottom: 20px;
 }
 
 .page-wrapper {
-  width: 90%;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   text-align: right;
 }
-
 
 #about,
 #work {
@@ -162,7 +169,7 @@ nav li a:hover {
 
 .contact {
   display: flex;
-  flex-direction: rows;
+  flex-direction: row;
   justify-content: space-around;
   text-align: left;
 }
@@ -180,17 +187,19 @@ nav li a:hover {
 .contact-ul li a {
   list-style-type: none;
   text-decoration: none;
+  position: relative;
 
 }
 
-.contact-ul li::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 90px;
-  width: 100%;
-  border-bottom: 4px solid var(--secondary-text-col);
-}
+.contact-ul li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 23px;
+    transform: translateX(-50%);
+    width: 110%;
+    border-bottom: 3px solid var(--secondary-text-col);
+  }
 
 .contact-ul li a {
   color: var(--secondary-text-col);
@@ -201,7 +210,7 @@ nav li a:hover {
 }
 
 .page-section {
-  margin-top: 40px;
+  margin-top: 15px;
   width: 100%;
 }
 
@@ -210,12 +219,6 @@ nav li a:hover {
   text-align: left;
   padding: 20px 0;
   margin: 0 40px;
-}
-
-.page-section-title {
-  border-right: 3px solid var(--secondary-text-col);
-  padding-right: 10px;
-  text-align: right;
 }
 
 .page {
@@ -227,8 +230,9 @@ nav li a:hover {
 .portfolio {
   width: 80%;
   margin: 0 auto;
+  padding: 0 30px;
   display: grid;
-  grid-template-rows: 320px 120px 120px;
+  grid-template-rows: 350px 120px 120px;
   grid-template-columns: 1f 1fr;
   grid-gap: 10px;
   grid-template-areas:
@@ -240,42 +244,28 @@ nav li a:hover {
 .portfolio-card {
   border: 4px solid var(--primary-text-col);
   position: relative;
+  overflow: hidden;
 }
 
 #card-showcase {
-  background-image: url("../images/02-portfolio-showcase.png");
-  background-size: cover;
-  background-repeat: no-repeat;
   grid-area: showcase;
   
 }
 
 #card2 {
-  background-image: url("../images/02-portfolio-1.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
   grid-area: card2;
 }
 
 
 #card3 {
-  background-image: url("../images/02-portfolio-2.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
   grid-area: card3;
 }
 
 #card4 {
-  background-image: url("../images/02-portfolio-3.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
   grid-area: card4;
 }
 
 #card5 {
-  background-image: url("../images/02-run-buddy.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
   grid-area: card5;
 }
 
@@ -291,6 +281,10 @@ nav li a:hover {
   z-index: 100;
 }
 
+.portfolio-card{
+  cursor: pointer;
+}
+
 .portfolio-card-title {
   margin-bottom: 15px;
   padding: 5px 8px;
@@ -299,14 +293,27 @@ nav li a:hover {
   align-items: flex-start;
   background-color: var(--primary-text-col);
   position: absolute;
-  top: 50%;
+  top: 40%;
   z-index: 100;
 }
 
-.portfolio-card-title, .portfolio-showcase-title h4 {
+.portfolio-card h3 {
+  font-size: 1.3rem;
+}
+.portfolio-card h4 {
   font-size: 0.7rem;
 }
+
 
 .portfolio-card a {
   cursor: pointer;
 }
+
+
+.page-section img {
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+
