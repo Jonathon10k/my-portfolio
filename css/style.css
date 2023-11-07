@@ -78,7 +78,7 @@ nav li {
 nav li a {
   font-size: 1.2rem;
   color: var(--primary-text-col);
-  text-decoration: none;
+  text-decoration: none; !important
   position: relative;
 }
 
@@ -95,6 +95,7 @@ nav li a::after {
 
 nav li a:hover {
   border-bottom: 3px solid lightgrey;
+  text-decoration: none;
   color: lightgrey;
   cursor: pointer;
 }
@@ -192,14 +193,14 @@ nav li a:hover {
 }
 
 .contact-ul li a::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 23px;
-    transform: translateX(-50%);
-    width: 110%;
-    border-bottom: 3px solid var(--secondary-text-col);
-  }
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 23px;
+  transform: translateX(-50%);
+  width: 110%;
+  border-bottom: 3px solid var(--secondary-text-col);
+}
 
 .contact-ul li a {
   color: var(--secondary-text-col);
@@ -247,9 +248,26 @@ nav li a:hover {
   overflow: hidden;
 }
 
+.portfolio-card::after {
+content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-color: rgba(18, 91, 144, 0.6);
+  transition: background-color 1.5s;
+}
+
+.portfolio-card:hover::after {
+  background-color: rgba(18, 91, 144, 0);
+  
+}
+
 #card-showcase {
   grid-area: showcase;
-  
+
 }
 
 #card2 {
@@ -281,7 +299,7 @@ nav li a:hover {
   z-index: 100;
 }
 
-.portfolio-card{
+.portfolio-card {
   cursor: pointer;
 }
 
@@ -300,6 +318,7 @@ nav li a:hover {
 .portfolio-card h3 {
   font-size: 1.3rem;
 }
+
 .portfolio-card h4 {
   font-size: 0.7rem;
 }
@@ -309,7 +328,6 @@ nav li a:hover {
   cursor: pointer;
 }
 
-
 .page-section img {
   max-width: 100%;
   height: auto;
@@ -317,3 +335,37 @@ nav li a:hover {
   overflow: hidden;
 }
 
+/* Media query for tablet viewport */
+@media screen and (max-width: 768px) {
+
+  .page-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  body * {
+    width: 100%;
+    display: block;
+    width: auto;
+
+  }
+
+  .header {
+    flex-direction: row;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .portfolio {
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+      "showcase"
+      "card2"
+      "card3"
+      "card4"
+      "card5";
+
+
+  }
+}
