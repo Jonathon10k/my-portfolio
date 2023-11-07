@@ -1,5 +1,5 @@
 # My Portfolio (Module 2 Challenge)
-My submission for the Unit 2 Portfolio Challenge
+My submission for the Module 2 Portfolio Challenge
 
 ![Alt text](images/02-screenshot.png)
 
