@@ -335,37 +335,7 @@ content: "";
   overflow: hidden;
 }
 
-/* Media query for tablet viewport */
-@media screen and (max-width: 768px) {
-
-  .page-wrapper {
-    display: flex;
-    flex-direction: column;
-  }
-
-  body * {
-    width: 100%;
-    display: block;
-    width: auto;
-
-  }
-
-  .header {
-    flex-direction: row;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-  }
-
-  .portfolio {
-    grid-template-rows: repeat(5, 1fr);
-    grid-template-areas:
-      "showcase"
-      "card2"
-      "card3"
-      "card4"
-      "card5";
+/* TODO media query for tablet viewport */
 
 
-  }
-}
+/* TODO media query for phone viewport */
