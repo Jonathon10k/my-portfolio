@@ -80,18 +80,11 @@ nav li a {
   color: var(--primary-text-col);
   text-decoration: none; !important
   position: relative;
+  border-bottom: 3px solid var(--primary-text-col);
 }
 
 /* Li extended underline */
-nav li a::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -5px;
-  transform: translateX(-50%);
-  width: 110%;
-  border-bottom: 3px solid var(--primary-text-col);
-}
+
 
 nav li a:hover {
   border-bottom: 3px solid lightgrey;
@@ -192,14 +185,14 @@ nav li a:hover {
 
 }
 
-.contact-ul li a::after {
+.contact-ul li a::before {
   content: "";
   position: absolute;
   left: 50%;
   top: 23px;
   transform: translateX(-50%);
   width: 110%;
-  border-bottom: 3px solid var(--secondary-text-col);
+  border-bottom: 3px solid var(--secondary-text-col)
 }
 
 .contact-ul li a {
